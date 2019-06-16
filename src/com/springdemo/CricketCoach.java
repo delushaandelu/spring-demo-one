@@ -9,7 +9,6 @@ public class CricketCoach implements Coach {
 	private String team;
 	
 	
-	
 	//create no-arg cons
 	
 	public CricketCoach() {

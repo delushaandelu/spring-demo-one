@@ -8,32 +8,15 @@
 	   		http://www.springframework.org/schema/context
 	   		http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-	<!--load the property file: sport:properties-->
-	<context:property-placeholder location="classpath:sport.properties"/>
-	
-	
-	
+		
 	<!--setup our getter injection-->
 	<bean id="myFortuneService" class="com.springdemo.HappyFortuneService">
 	</bean>
 	
-	
-	
-    <bean id="myCoach" class="com.springdemo.TrackCoach">
+    <bean id="myCoach" 
+    	class="com.springdemo.TrackCoach"
+    	scope="prototype">
     <constructor-arg ref="myFortuneService"/>
-    </bean>
-    
-    
-    
-    
-    <bean id = "MyCricketCoach" class="com.springdemo.CricketCoach">
-    
-    <!--setup our setter injection-->
-    <property name="fortuneService" ref="myFortuneService"/>
-    
-    <!--Inject liter values-->
-    <property name="emailAddress" value="${foo.email}"/>
-    <property name="team" value="${foo.team}"/>
     </bean>
     
 </beans>
